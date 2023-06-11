@@ -64,17 +64,22 @@
 [3, 2, 5, 6, 7, 8] -> [2, 3, 5, 6, 7, 8]
 Мы видим, что наш список отсортирован с использованием метода пузырьковой сортировки.
 """
-from typing import List
+from typing import List, Union
 
 
 class BubbleSorting:
+
+    def __init__(self, sequence):
+        """Constructor"""
+        self.sequence = sequence
+
     @staticmethod
-    def MyBubbleSorting(sequence: List[int]) -> List[int]:
+    def MyBubbleSorting(sequence: List[Union[int, float]]) -> List[Union[int, float]]:
         """
         :param sequence: sequence with int numbers
-        :type sequence: List[int]
+        :type sequence: List[Union[int, float]
         :return sequence: sequence with sorted int numbers
-        :rtype sequence: List[int]
+        :rtype sequence: List[Union[int, float]
         """
         for i in range(0, len(sequence)):
             for j in range(0, len(sequence) - 1):
@@ -85,7 +90,8 @@ class BubbleSorting:
         return sequence
 
 
-list1 = [5, 3, 8, 6, 7, 2]
+lst = [[5, 3, 8, 6, 7, 2], [5.1, 3.3, 3.4, 4.4, 4.35]]
 
-result = BubbleSorting.MyBubbleSorting(sequence=list1)
-print(result)
+for i in range(len(lst)):
+    result = BubbleSorting(sequence=lst).MyBubbleSorting(sequence=lst[i])
+    print(result)
